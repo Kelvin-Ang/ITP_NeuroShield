@@ -1,35 +1,29 @@
-#buttonInput.py
-import RPi.GPIO as GPIO
-from time import sleep
-from picamera.array import PiRGBArray
-from picamera import PiCamera
+import cv2
 
-camera = PiCamera()
-GPIO.setmode(GPIO.BCM)
+cam = cv2.VideoCapture(0)
 
-sleepTime = .1
+cv2.namedWindow("test")
 
-#GPIO Pin of the component
-lightPin = 4
-buttonPin = 17
+img_counter = 0
 
-GPIO.setup(lightPin, GPIO.OUT)
-GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+while True:
+    ret, frame = cam.read()
+    cv2.imshow("test", frame)
+    if not ret:
+        break
+    k = cv2.waitKey(1)
 
-try:
-    while True:
-        #GPIO.output(lightPin, not GPIO.input(buttonPin))
-        #sleep(.1)
-        
-        if (not GPIO.input(buttonPin)):
-            camera.capture('/home/pi/slave_image.jpg')
-            print('input from master on gpio 23, Picture taken!') 
-            GPIO.output(lightPin, True)
-            
-        
-        else:
-            GPIO.output(lightPin, False)
-finally:
-    GPIO.output(lightPin, False)
-    GPIO.cleanup()
+    if k%256 == 27:
+        # ESC pressed
+        print("Escape hit, closing...")
+        break
+    elif k%256 == 32:
+        # SPACE pressed
+        img_name = "opencv_frame_{}.png".format(img_counter)
+        cv2.imwrite(img_name, frame)
+        print("{} written!".format(img_name))
+        img_counter += 1
 
+cam.release()
+
+cv2.destroyAllWindows()
