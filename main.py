@@ -27,3 +27,6 @@ try:
 finally:
     GPIO.output(lightPin, False)
     GPIO.cleanup()
+
+
+    # test
