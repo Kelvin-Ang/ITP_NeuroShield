@@ -21,10 +21,14 @@ buttonPin = 17
 GPIO.setup(lightPin, GPIO.OUT)
 GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
+i=0
+
 try:
-    while True:
+    # while True:
+    while i < 10:
         GPIO.output(lightPin, GPIO.input(buttonPin))
         sleep(.1)
+        i++
 finally:
     GPIO.output(lightPin, False)
     GPIO.cleanup()
