@@ -61,7 +61,8 @@ try:
         #sleep(.1)
         
         if (not GPIO.input(buttonPin)):
-            camera.capture('/home/pi/slave_image.jpg')
+            # camera.capture('/home/pi/slave_image.jpg')
+            camera.capture('/home/pi/slave_image.jpg', 'jpg', 'port3')
             print('input from master on gpio 23, Picture taken!') 
             GPIO.output(lightPin, True)
             
