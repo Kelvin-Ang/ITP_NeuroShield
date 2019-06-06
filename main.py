@@ -1,6 +1,6 @@
 import sys
 # import fake_rpi
-import fake_picamera as PiCamera
+from fake_picamera import PiCamera
 
 # sys.modules['RPi'] = fake_rpi.RPi     # Fake RPi (GPIO)
 # sys.modules['smbus'] = fake_rpi.smbus # Fake smbus (I2C)
