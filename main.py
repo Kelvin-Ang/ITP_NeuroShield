@@ -1,29 +1,28 @@
-import cv2
+import sys
+import fake_rpi
 
-cam = cv2.VideoCapture(0)
+sys.modules['RPi'] = fake_rpi.RPi     # Fake RPi (GPIO)
+sys.modules['smbus'] = fake_rpi.smbus # Fake smbus (I2C)
 
-cv2.namedWindow("test")
 
-img_counter = 0
+import RPi.GPIO as GPIO
+from time import sleep
 
-while True:
-    ret, frame = cam.read()
-    cv2.imshow("test", frame)
-    if not ret:
-        break
-    k = cv2.waitKey(1)
+GPIO.setmode(GPIO.BCM)
 
-    if k%256 == 27:
-        # ESC pressed
-        print("Escape hit, closing...")
-        break
-    elif k%256 == 32:
-        # SPACE pressed
-        img_name = "opencv_frame_{}.png".format(img_counter)
-        cv2.imwrite(img_name, frame)
-        print("{} written!".format(img_name))
-        img_counter += 1
+sleepTime = .1
 
-cam.release()
+#GPIO Pin of the component
+lightPin = 4
+buttonPin = 17
 
-cv2.destroyAllWindows()
+GPIO.setup(lightPin, GPIO.OUT)
+GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+try:
+    while True:
+        GPIO.output(lightPin, GPIO.input(buttonPin))
+        sleep(.1)
+finally:
+    GPIO.output(lightPin, False)
+    GPIO.cleanup()
