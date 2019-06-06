@@ -1,10 +1,11 @@
 import sys
-import fake_rpi
+# import fake_rpi
+# import fake_picamera as picamera
 
 # sys.modules['RPi'] = fake_rpi.RPi     # Fake RPi (GPIO)
 # sys.modules['smbus'] = fake_rpi.smbus # Fake smbus (I2C)
 
-sys.modules['picamera'] = fake_rpi.picamera
+sys.modules['picamera'] = fake_picamera
 
 
 # import RPi.GPIO as GPIO
@@ -69,7 +70,7 @@ try:
             GPIO.output(lightPin, False)
 
         i+=1
-        
+
 finally:
     GPIO.output(lightPin, False)
     GPIO.cleanup()
