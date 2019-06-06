@@ -12,7 +12,7 @@ import fake_picamera as PiCamera
 # import FakeRPi.GPIO as GPIO
 import GPIO as GPIO
 from time import sleep
-from picamera.array import PiRGBArray
+# from picamera.array import PiRGBArray
 # from picamera import PiCamera
 
 # GPIO.setmode(GPIO.BCM)
