@@ -40,6 +40,8 @@ from time import sleep
 
 
 
+
+
 camera = PiCamera()
 GPIO.setmode(GPIO.BCM)
 
