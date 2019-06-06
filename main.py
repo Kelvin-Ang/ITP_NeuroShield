@@ -6,7 +6,8 @@
 
 
 # import RPi.GPIO as GPIO
-import FakeRPi.GPIO as GPIO
+# import FakeRPi.GPIO as GPIO
+import GPIO as GPIO
 from time import sleep
 
 GPIO.setmode(GPIO.BCM)
