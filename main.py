@@ -1,11 +1,11 @@
 import sys
 # import fake_rpi
-# import fake_picamera as picamera
+import fake_picamera as PiCamera
 
 # sys.modules['RPi'] = fake_rpi.RPi     # Fake RPi (GPIO)
 # sys.modules['smbus'] = fake_rpi.smbus # Fake smbus (I2C)
 
-sys.modules['picamera'] = fake_picamera
+# sys.modules['picamera'] = fake_picamera
 
 
 # import RPi.GPIO as GPIO
@@ -13,7 +13,7 @@ sys.modules['picamera'] = fake_picamera
 import GPIO as GPIO
 from time import sleep
 from picamera.array import PiRGBArray
-from picamera import PiCamera
+# from picamera import PiCamera
 
 # GPIO.setmode(GPIO.BCM)
 
