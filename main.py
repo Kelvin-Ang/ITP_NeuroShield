@@ -28,7 +28,7 @@ try:
     while i < 10:
         GPIO.output(lightPin, GPIO.input(buttonPin))
         sleep(.1)
-        i++
+        i+=1
 finally:
     GPIO.output(lightPin, False)
     GPIO.cleanup()
