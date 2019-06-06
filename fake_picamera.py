@@ -1,7 +1,7 @@
 import numpy as np
 # import platform
-from .wrappers import printf
-from .Base import Base
+from wrappers import printf
+from Base import Base
 
 
 class BGR(object):
