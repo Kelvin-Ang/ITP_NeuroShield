@@ -29,4 +29,4 @@ finally:
     GPIO.cleanup()
 
 
-    # test
+    # tes
