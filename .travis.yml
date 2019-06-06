@@ -10,8 +10,7 @@ python: 2.7
 # Install the codecov pip dependency
 install: travis_wait mvn install
   # - pip install codecov
-  # - pip install fake_rpi
-  - pip install git+https://github.com/sn4k3/FakeRPi
+  - pip install fake_rpi
   - pip install RPi.GPIO
 
 # Run the unit test
