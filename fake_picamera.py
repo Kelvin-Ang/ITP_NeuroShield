@@ -35,7 +35,7 @@ class PiCamera(Base):
 		pass
 
 	@printf
-	def capture(self, image, format, use_video_port):
+	def capture(self, image):
 		# this does nothing
 		pass
 
