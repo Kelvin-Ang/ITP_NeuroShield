@@ -68,8 +68,9 @@ greenLight.turnOn()
 	
 mode = 1	
 hold_time = 2
+x = 0
 
-while(True):
+while(x!=5):
 	if(mode == 1):
 		if(redBtn.isTriggered()):
 			redLight.turnOn()
@@ -100,7 +101,7 @@ while(True):
 	else:
 		recognMode()
 		
-				
+	x = x+1			
 	
 	if(toggleBtn.isTriggered()):
 		start_time = time.time()
