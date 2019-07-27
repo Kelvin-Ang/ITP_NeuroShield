@@ -4,7 +4,11 @@ import NeuroMem as nm
 import GVcomm_SPI as comm
 import cv2 as cv
 import function as func
-import RPi.GPIO as GPIO
+try:
+	import RPi.GPIO as GPIO
+except:
+	print("cannot import RPI.GPIO")
+
 import time
 import picamera
 
