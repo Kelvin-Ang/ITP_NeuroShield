@@ -4,9 +4,12 @@ import NeuroMem as nm
 import GVcomm_SPI as comm
 import cv2 as cv
 import function as func
-try:
+env = 0
+if(env = 1):
+	import fake_rpi
+	
+else:
 	import RPi.GPIO as GPIO
-except:
 	print("cannot import RPI.GPIO")
 
 import time
