@@ -5,7 +5,7 @@ import GVcomm_SPI as comm
 import cv2 as cv
 import function as func
 env = 0
-if(env = 1):
+if(env == 1):
 	import fake_rpi
 	
 else:
