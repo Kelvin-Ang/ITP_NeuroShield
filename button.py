@@ -6,7 +6,7 @@ import cv2 as cv
 import function as func
 env = 1
 if(env == 1):
-	import fake_rpi	
+	import fake_rpi	as GPIO
 else:
 	import RPi.GPIO as GPIO
 	print("cannot import RPI.GPIO")
