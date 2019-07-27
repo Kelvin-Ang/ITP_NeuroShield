@@ -3,7 +3,6 @@ import ctypes
 import NeuroMem as nm
 import GVcomm_SPI as comm
 import cv2 as cv
-import function as func
 env = 1
 if(env == 1):
 	import fake_rpi	as GPIO
@@ -12,7 +11,8 @@ else:
 	print("cannot import RPI.GPIO")
 
 import time
-import picamera
+# import picamera
+from fake_picamera import PiCamera
 
 
 GPIO.setmode(GPIO.BOARD)
