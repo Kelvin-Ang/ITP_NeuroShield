@@ -8,7 +8,7 @@ env = 1
 if(env == 1):
 	import fake_rpi	as GPIO
 else:
-	import RPi.GPIO as GPIO
+	# import RPi.GPIO as GPIO
 	print("cannot import RPI.GPIO")
 
 import time
