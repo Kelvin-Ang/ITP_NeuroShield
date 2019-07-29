@@ -1,5 +1,6 @@
 import NeuroMem as nm
-import GVcomm_SPI as comm
+# import GVcomm_SPI as comm
+import fake_GVcomm_SPI as comm
 import sys
 from imageProcessing import *
 from PIL import ImageEnhance

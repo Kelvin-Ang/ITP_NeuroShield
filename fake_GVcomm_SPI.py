@@ -43,7 +43,8 @@ def Read(module, reg):
     cmdread=[deviceID, module, 0x00, 0x00, reg, 0x00, 0x00, 0x01, 0x00, 0x00]
     data= spi.xfer2(cmdread)
     GPIO.output(SPI_CS, 1)
-    return ((data[8] << 8) + data[9]);
+    # return ((data[8] << 8) + data[9]);
+    return "data"
 
 #---------------------------------------
 # write the register of a given module
