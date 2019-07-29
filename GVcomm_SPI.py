@@ -9,8 +9,11 @@
 
 # import RPi.GPIO as GPIO
 import FakeRPi.GPIO as GPIO
-import spidev
-spi = spidev.SpiDev()
+# import spidev
+from fake_spidev import SpiDev
+
+# spi = spidev.SpiDev()
+spi = SpiDev()
 
 deviceID=0x01 #code for NeuroShield selected by nepes
 SPI_CS = 24
