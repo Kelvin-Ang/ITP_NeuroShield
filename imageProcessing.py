@@ -1,5 +1,6 @@
 import cv2 as cv
-import picamera
+# import picamera
+from fake_picamera import PiCamera
 import numpy as np
 import math
 import ctypes
