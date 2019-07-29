@@ -4,7 +4,8 @@ import NeuroMem as nm
 import GVcomm_SPI as comm
 import cv2 as cv
 
-import RPi.GPIO as GPIO
+# import RPi.GPIO as GPIO
+import fake_rpi	as GPIO
 import time
 import picamera
 
