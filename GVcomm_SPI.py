@@ -8,7 +8,7 @@
 # https://github.com/doceme/py-spidev
 
 # import RPi.GPIO as GPIO
-import fake_rpi as GPIO  
+import FakeRPi.GPIO as GPIO
 import spidev
 spi = spidev.SpiDev()
 

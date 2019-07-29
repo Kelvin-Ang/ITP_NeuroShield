@@ -5,7 +5,7 @@ import GVcomm_SPI as comm
 import cv2 as cv
 
 # import RPi.GPIO as GPIO
-import fake_rpi	as GPIO
+import FakeRPi.GPIO as GPIO
 import time
 import picamera
 
