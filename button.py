@@ -3,16 +3,10 @@ import ctypes
 import NeuroMem as nm
 import GVcomm_SPI as comm
 import cv2 as cv
-env = 1
-if(env == 1):
-	import fake_rpi	as GPIO
-else:
-	# import RPi.GPIO as GPIO
-	print("cannot import RPI.GPIO")
 
+import RPi.GPIO as GPIO
 import time
-# import picamera
-from fake_picamera import PiCamera
+import picamera
 
 
 GPIO.setmode(GPIO.BOARD)
@@ -25,17 +19,7 @@ class Button:
 
 	def isTriggered(self):
 		if (not GPIO.input(self.buttonPin)):
-			return True			
-
-			
-			
-class snake:
-	def __init__(self,name):
-		self.name = name
-		
-	def snaken(self):
-		return self.name
-		
+			return True				
 		
 		
 class LED:
