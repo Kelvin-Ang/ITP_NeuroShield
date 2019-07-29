@@ -16,6 +16,8 @@ install:
   - pip install --ignore-installed six
   - pip install spidev
   - pip install opencv-contrib-python
+  - pip install Pillow
+
 
 # Run the unit test
 script:
