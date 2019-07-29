@@ -1,7 +1,7 @@
 import numpy as np
 # import platform
 from wrappers import printf
-from base import base
+from base import Base
 
 
 class BGR(object):
@@ -20,14 +20,14 @@ class BGR(object):
 
 # class picamera(object):
 # 	"""Fake class"""
-class PiCamera(base):
+class PiCamera(Base):
 	"""Fake class"""
 	resolution = (0, 0)
 
 	def __init__(self):
 		# empty constructor
 		# print('WARNING: Fake_RPi PiCamera on {}'.format(platform.system().lower()))
-		base.__init__(self, self.__class__)
+		Base.__init__(self, self.__class__)
 		pass
 
 	def close(self):
