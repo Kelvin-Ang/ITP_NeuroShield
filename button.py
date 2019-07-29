@@ -7,7 +7,8 @@ import cv2 as cv
 # import RPi.GPIO as GPIO
 import FakeRPi.GPIO as GPIO
 import time
-import picamera
+# import picamera
+import fake_rpi.picamera as picamera
 
 
 GPIO.setmode(GPIO.BOARD)
